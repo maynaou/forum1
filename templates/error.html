@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/error.css">
+    <title>Error</title>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-title">Something Went Wrong</div>
+        <div class="error-message">
+            <!-- Message d'erreur dynamique -->
+            {{.Err}}
+        </div>
+        <a href="/" class="error-button">Go Back HomePage</a>
+    </div>
+</body>
+</html>

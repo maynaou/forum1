@@ -1,0 +1,59 @@
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Utilisation d'une police sobre */
+    background-color: #0a0a2e; /* Bleu foncé */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff; /* Blanc pour le texte */
+}
+
+/* Container for the error message */
+.error-container {
+    background-color: #1d2671; /* Bleu avec une teinte royale */
+    border: 3px solid #ffcc00; /* Or pour la bordure */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.5); /* Ombre dorée */
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+/* Title styling */
+.error-title {
+    font-size: 36px;
+    color: #ffcc00; /* Or */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Majuscules pour plus de présence */
+}
+
+/* Message styling */
+.error-message {
+    font-size: 24px;
+    color: #d1d1d1; /* Gris clair pour plus de lisibilité */
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.error-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    color: #0a0a2e; /* Texte bleu foncé */
+    background-color: #ffcc00; /* Fond doré */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.error-button:hover {
+    background-color: #e6b800; /* Teinte dorée plus sombre au survol */
+}
+
