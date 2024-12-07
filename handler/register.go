@@ -7,6 +7,10 @@ import (
 )
 
 func RegisterHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/register" {
+		ShowErrorPage(w, "Page not found", http.StatusNotFound)
+		return
+	}
 	if r.Method == http.MethodGet {
 		err := templates.ExecuteTemplate(w, "register.html", nil)
 		if err != nil {
@@ -25,13 +29,8 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 			ShowErrorPage(w, "All fields are required", http.StatusBadRequest)
 			return
 		}
-		// hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
-		// if err != nil {
-		// 	ShowErrorPage(w, "Error hashing password", http.StatusInternalServerError)
-		// 	return
-		// }
 
-		_, err := database.Db.Exec("INSERT INTO users (email, username, password) VALUES (?, ?, ?)", email, username, password)
+	    _,err := database.Db.Exec(`INSERT INTO users (email, username, password) VALUES (?, ?, ?)`, email, username, password)
 		if err != nil {
 			ShowErrorPage(w, "Error saving user", http.StatusInternalServerError)
 			return
