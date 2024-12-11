@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+</head>
+<body>
+    <h1>Welcome to the Forum</h1>
+
+    <h2>Posts</h2>
+    <div id="posts">
+        {{ range . }}
+            <div>
+                <h3>{{ .Title }}</h3>
+                <p><strong>Creator:</strong> {{ .PostCreator }}</p>
+                <p>{{ .Body }}</p>
+            </div>
+        {{ else }}
+            <p>No posts available.</p>
+        {{ end }}
+    </div>
+    <a href="/create_post">Create New Post</a>
+</body>
+</html>

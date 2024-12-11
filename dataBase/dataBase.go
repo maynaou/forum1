@@ -43,4 +43,20 @@ func init() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	const CreatePostsTable string = `
+    CREATE TABLE IF NOT EXISTS posts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    post_creator TEXT NOT NULL,
+    title TEXT NOT NULL,
+    body TEXT NOT NULL,
+    time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );`
+
+	_, err = Db.Exec(CreatePostsTable)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
